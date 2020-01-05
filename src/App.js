@@ -1,32 +1,18 @@
-import React , {useState} from 'react';
+import React from "react";
 // import logo from './logo.svg';
-import './App.css';
-import Person from './Person/Person'
+import "./App.css";
+// import Post from "./Post";
+import Child1 from "./Child1";
+import Child2 from "./Child2";
 
-function App() {
-  const [person, setPerson] = useState([
-    { name : "mark" , age: "11" },
-    { name : "ss" , age: "12" },
-    { name : "dd" , age: "13" }
-  ])
-  const newPerson = [
-    { name : "a" , age: "1" },
-    { name : "b" , age: "2" },
-    { name : "c" , age: "3" }
-  ]
-
+const App = () => {
   return (
     <div className="App">
-      <p>mark</p>
-      <p>sarawut nawawisitkul</p>
-      <button onClick={() => setPerson(newPerson)}>
-        Click me
-      </button>
-      <Person name={person[0].name} age={person[0].age} />
-      <Person name={person[1].name} age={person[1].age} >Some thing fuck</Person>
-      <Person  name={person[2].name} age={person[2].age}/>
+      <h1>เนื้อหาจาก App Component</h1>
+      <Child1 />
+      <Child2 />
     </div>
   );
-}
+};
 
 export default App;
