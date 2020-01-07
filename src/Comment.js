@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react'
 
-const Comment = () => {
+const Comment = props => {
   return (
     <div>
-      <div>This is Comment !!!</div>
+      <span>
+        {props.data} from id : {props.userId}
+      </span>
     </div>
-  );
-};
+  )
+}
 
-export default Comment;
+export default Comment
