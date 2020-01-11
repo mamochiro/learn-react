@@ -1,45 +1,79 @@
-import React from 'react'
-// import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import Post from './Post'
-// import Child1 from "./Child1";
-// import Child2 from "./Child2";
-// import Comment from './Comment'
+import Coupon from './Coupon'
 
-const App = () => {
-  const myPic = 'https://i.picsum.photos/id/237/200/300.jpg'
-  return (
-    // <div className="App">
-    //   {/* child component */}
-    //   {/* <Post id="2">
-    //     <Comment userId="1" data="5 start"></Comment>
-    //     <Comment userId="2" data="3 start"></Comment>
-    //   </Post>
-    //   <Post id="3">
-    //     <Comment userId="4" data="mark"></Comment>
-    //     <Comment userId="5" data="shit"></Comment>
-    //   </Post> */}
+// const App = () => {
+//   const [dataState, setDataState] = useState({
+//     counter: 0,
+//   })
 
-    //   {/* css */}
-    //   {/* <div className="myStyle">Hello Inline Style</div>
-    //   <p
-    //     style={{
-    //       color: 'red',
-    //       fontSize: 14,
-    //       textAlign: 'center',
-    //     }}
-    //   >
-    //     This is the another Line
-    //   </p> */}
+//   const plusHandler = () => {
+//     setDataState({
+//       counter: dataState.counter + 1,
+//     })
+//   }
 
-    //   {/* bootstrap */}
+//   const minusHandler = () => {
+//     setDataState({
+//       counter: dataState.counter - 1,
+//     })
+//   }
+//   return (
+//     <div className="col-4 mx-auto mt-4">
+//       <div className="card text-center">
+//         <div className="card-header">
+//           <button
+//             className="btn btn-sm btn-primary mx-1"
+//             onClick={minusHandler}
+//           >
+//             ลด
+//           </button>
+//           <button className="btn btn-sm btn-primary mx-1" onClick={plusHandler}>
+//             เพิ่ม
+//           </button>
+//         </div>
+//         <div className="card-body">Result : {dataState.counter}</div>
+//       </div>
+//     </div>
+//   )
+// }
 
-    // </div>
-    <div class="container">
-      <img class="img-thumnail" src={myPic} alt="nature" />
-    </div>
-  )
+class App extends Component {
+  state = {
+    coupon1: {
+      secretWord: '1234',
+      status: true,
+    },
+    coupon2: {
+      secretWord: '5678',
+      status: true,
+    },
+  }
+
+  useCoupon = name => {
+    const updateCoupon = { ...this.state }
+
+    updateCoupon[name].status = false
+    this.setState(updateCoupon)
+  }
+
+  render() {
+    return (
+      <div className="contrainer">
+        <div className="row mt-4">
+          <Coupon
+            data={this.state.coupon1}
+            setCoupon={this.useCoupon.bind(this, 'coupon1')}
+          />
+          <Coupon
+            data={this.state.coupon2}
+            setCoupon={this.useCoupon.bind(this, 'coupon2')}
+          />
+        </div>
+      </div>
+    )
+  }
 }
 
 export default App
