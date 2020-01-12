@@ -2,46 +2,40 @@ import React, { component } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-class App extends component {
-  state = {
-    user: 'sarawut',
-    password: 'thisIsMark',
-    address: {
-      houseNo: '123',
-      province: 'narathiwas',
-    },
-  }
+// const App = () => {
+//   const [dataState, setDataState] = useState({
+//     counter: 0,
+//   })
 
-  userClick = () => {
-    this.setState({
-      user: 'athena',
-      password: 'autoloooock',
-    })
-  }
+//   const plusHandler = () => {
+//     setDataState({
+//       counter: dataState.counter + 1,
+//     })
+//   }
 
-  render() {
-    return (
-      <div className="contrainer">
-        <div className="row">
-          <div className="col-12 col-sm-6 mx-auto mt-5">
-            <div className="card ml-5 mr-5">
-              <div className="card-header text-right">
-                <button className="btn btn-success" onClick={this.userClick}>
-                  Click
-                </button>
-              </div>
-              <div className="card-body">
-                user : <span>{this.state.user}</span>
-                password : <span>{this.state.password}</span>
-                address : <span>{this.state.address.houseNo}</span>
-                <span>{this.state.address.province}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-}
+//   const minusHandler = () => {
+//     setDataState({
+//       counter: dataState.counter - 1,
+//     })
+//   }
+//   return (
+//     <div className="col-4 mx-auto mt-4">
+//       <div className="card text-center">
+//         <div className="card-header">
+//           <button
+//             className="btn btn-sm btn-primary mx-1"
+//             onClick={minusHandler}
+//           >
+//             ลด
+//           </button>
+//           <button className="btn btn-sm btn-primary mx-1" onClick={plusHandler}>
+//             เพิ่ม
+//           </button>
+//         </div>
+//         <div className="card-body">Result : {dataState.counter}</div>
+//       </div>
+//     </div>
+//   )
+// }
 
 export default App
